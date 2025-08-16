@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMA AI - ตรวจสอบเบอร์มิจฉาชีพ</title>
+    <link rel="stylesheet" href="ama.css">
+</head>
+<body>
+
+   <header>
+       <nav class="navigation">
+           <a href="#" class="btnLogin-popup" title="ลงชื่อเข้าใช้">
+              <ion-icon name="person-outline"></ion-icon>
+              <span>ลงชื่อเข้าใช้</span>
+           </a>
+           <a href="Home.html" title="หน้าหลัก">
+              <ion-icon name="home-outline"></ion-icon>
+              <span>หน้าหลัก</span>
+            </a>
+           <a href="About.html" title="เกี่ยวกับ">
+              <ion-icon name="information-circle-outline"></ion-icon>
+              <span>เกี่ยวกับ</span>
+           </a>
+           <a href="services.html" title="ช่วยเหลือ">
+              <ion-icon name="build-outline"></ion-icon>
+              <span>ช่วยเหลือ</span>
+           </a>
+           <a href="contact.html" title="ติดต่อ">
+              <ion-icon name="mail-outline"></ion-icon>
+              <span>ติดต่อ</span>
+           </a>
+       </nav>
+    </header>
+
+<div class="main-content">
+    <div class="checker-container">
+        <h1>AMA AI Checker 🤖</h1>
+        <p>กรอกเบอร์โทรศัพท์ต้องสงสัยเพื่อตรวจสอบกับฐานข้อมูลของเรา</p>
+        
+        <div class="input-group">
+            <input type="tel" id="phone-input" placeholder="เช่น 0812345678" maxlength="10">
+            <button id="check-button">ตรวจสอบ</button>
+        </div>
+        
+        <div id="result-display">
+            </div>
+
+        <div id="scam-details-box">
+            <h3>รายละเอียดเพิ่มเติมของมิจฉาชีพ</h3>
+            <div class="detail-item">
+                <strong>ช่องทางติดต่อ:</strong>
+                <p id="details-channels"></p>
+            </div>
+            <div class="detail-item">
+                <strong>บัญชีที่ใช้:</strong>
+                <p id="details-banks"></p>
+            </div>
+            <div class="detail-item">
+                <strong>ประวัติการโกง:</strong>
+                <p id="details-history"></p>
+            </div>
+            <button id="block-button">🚫 บล็อกเบอร์โทรนี้</button>
+        </div>
+    </div>
+</div>
+
+<script src="ama.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

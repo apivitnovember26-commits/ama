@@ -1,0 +1,252 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+/* --- 2. Background & Body Layout --- */
+body {
+   
+    min-height: 100vh;
+    background: url('images/AMA\ \(6\).jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-left: 250px; /* !! สำคัญ: สร้างพื้นที่สำหรับ Sidebar !! */
+    font-family: 'Lato', sans-serif; /* กำหนดฟอนต์หลัก */
+}
+
+/* --- 3. Sidebar Navigation (Header) --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    
+    /* ลบ background เดิมออก หรือคอมเมนต์ไว้ */
+    /* background: #F5F5DC; */ 
+
+    /* !! เพิ่มโค้ดไล่สีอันนี้เข้าไปแทน !! */
+    background: linear-gradient(to bottom, #a8a8a8, #e5e5e5, #e9e4d9);
+
+    box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 15px;
+    z-index: 99;
+}
+
+.profile-link {
+    display: block;
+    margin-bottom: 40px;
+    color: #fff;
+    font-size: 5em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.profile-link:hover {
+    color: #eadb07;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px; /* เพิ่มระยะห่างระหว่างแต่ละเมนู */
+}
+
+
+.navigation a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    margin: 0;
+    color: #4A4A4A; /* สีตัวอักษร (สีเทาเข้ม) */
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navigation a:hover {
+    background-color: #f4e893; /* สีพื้นหลังเมื่อเมาส์ชี้ */
+    color: #000000; /* สีตัวอักษรเมื่อเมาส์ชี้ */
+}
+
+.navigation a ion-icon {
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
+/* --- 4. Main Content & Checker --- */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+.checker-container {
+    background: white;
+    padding: 100px;
+    border-radius: 50px;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.checker-container h1 {
+    font-size: 2.2em;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.checker-container p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+#phone-input {
+    flex-grow: 1;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-family: 'Kanit', sans-serif;
+    transition: border-color 0.3s;
+}
+
+#phone-input:focus {
+    outline: none;
+    border-color: #0056b3;
+}
+
+#check-button {
+    padding: 15px 25px;
+    border: none;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-family: 'Kanit', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#check-button:hover {
+    background-color: #003366;
+}
+
+#result-display {
+    margin-top: 30px;
+    font-size: 1.2em;
+    font-weight: 500;
+    min-height: 50px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.result-safe {
+    background-color: #eaf7e9;
+    color: #2b7a2b;
+}
+
+.result-scam {
+    background-color: #fdeaea;
+    color: #c9302c;
+}
+
+.result-error {
+    background-color: #fff3e0;
+    color: #d68910;
+}
+
+#scam-details-box {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px dashed #c9302c;
+    border-radius: 10px;
+    background-color: #fdeaea;
+    text-align: left;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#scam-details-box.visible {
+    display: block;
+}
+
+#scam-details-box h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #a94442;
+}
+
+.detail-item {
+    margin-bottom: 10px;
+}
+
+.detail-item strong {
+    color: #333;
+}
+
+.detail-item p {
+    margin: 5px 0 0 10px;
+    color: #555;
+}
+
+#block-button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    background-color: #d9534f;
+    color: white;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: 'Kanit', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#block-button:hover {
+    background-color: #c9302c;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.navigation a.btnLogin-popup ion-icon {
+    background-color: #c8b89e; /* สีพื้นหลังวงกลม (สีเบจ/แทน) */
+    color: #ffffff;            /* สีไอคอนด้านใน (สีขาว) */
+    border-radius: 50%;       /* ทำให้ขอบโค้งเป็นวงกลม */
+    
+    /* กำหนดขนาดและจัดไอคอนให้อยู่ตรงกลาง */
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em; /* อาจปรับขนาดไอคอนให้พอดีกับวงกลม */
+}
